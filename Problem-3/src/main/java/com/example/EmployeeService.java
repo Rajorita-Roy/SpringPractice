@@ -41,24 +41,19 @@ public class EmployeeService {
     }
 
     public static void main(String[] args) {
-        // Create an application context from the configuration class
         ApplicationContext context = new AnnotationConfigApplicationContext(EmployeeService.class);
-
-        // Get the EmployeeService bean
         EmployeeService employeeService = context.getBean(EmployeeService.class);
 
-        // Add employees
         employeeService.addEmployee(new Employee(101, "Alice", 75000, "HR"));
         employeeService.addEmployee(new Employee(102, "Bob", 85000, "IT"));
         employeeService.addEmployee(new Employee(103, "Charlie", 75000, "HR"));
         employeeService.addEmployee(new Employee(104, "David", 95000, "IT"));
         employeeService.addEmployee(new Employee(105, "Eve", 60000, "Finance"));
 
-        // Sort and print employees by name
+
         employeeService.printEmployeesSortedByName();
         System.out.println();
 
-        // Group employees by department and print
         System.out.println("Employees grouped by department:");
         Map<String, List<Employee>> employeesByDept = employeeService.getEmployeesByDepartment();
         employeesByDept.forEach((dept, list) -> {
@@ -67,9 +62,10 @@ public class EmployeeService {
         });
         System.out.println();
 
-        // Find and print the top paid employee
+
         Employee topPaid = employeeService.getTopPaidEmployee();
         System.out.println("Top Paid Employee: " + topPaid);
     }
 }
+
 
