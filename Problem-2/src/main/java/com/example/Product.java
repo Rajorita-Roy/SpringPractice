@@ -20,12 +20,10 @@ public class Product implements Comparable<Product> {
     public void setName(String name) { this.name = name; }
     public void setPrice(double price) { this.price = price; }
 
-    // Comparator for sorting by price using a lambda
     public static Comparator<Product> sortByPrice() {
         return (p1, p2) -> Double.compare(p1.getPrice(), p2.getPrice());
     }
 
-    // Natural sort order by name
     @Override
     public int compareTo(Product other) {
         return this.name.compareTo(other.name);
@@ -39,4 +37,5 @@ public class Product implements Comparable<Product> {
                 ", price=" + price +
                 '}';
     }
+
 }
