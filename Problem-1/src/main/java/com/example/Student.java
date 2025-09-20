@@ -18,18 +18,17 @@ public class Student implements Comparable<Student> {
     public String getName() { return name; }
     public int getMarks() { return marks; }
 
-    // Setters
+
     public void setId(int id) { this.id = id; }
     public void setName(String name) { this.name = name; }
     public void setMarks(int marks) { this.marks = marks; }
 
-    // Comparator for sorting by marks (descending) and then by id (ascending)
     public static Comparator<Student> sortByMarksAndId() {
         return Comparator.comparing(Student::getMarks).reversed()
                 .thenComparing(Student::getId);
     }
 
-    // Default natural ordering by ID
+
     @Override
     public int compareTo(Student other) {
         return Integer.compare(this.id, other.id);
@@ -44,3 +43,4 @@ public class Student implements Comparable<Student> {
                 '}';
     }
 }
+
