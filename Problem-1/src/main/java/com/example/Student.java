@@ -13,7 +13,6 @@ public class Student implements Comparable<Student> {
         this.marks = marks;
     }
 
-    // Getters
     public int getId() { return id; }
     public String getName() { return name; }
     public int getMarks() { return marks; }
@@ -43,4 +42,5 @@ public class Student implements Comparable<Student> {
                 '}';
     }
 }
+
 
